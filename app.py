@@ -1,5 +1,6 @@
 # -*- coding:UTF-8 -*-
 import streamlit as st
+import pandas as pd
 
 def main():
     st.title("Hello World")
@@ -33,6 +34,19 @@ def main():
     # Help
     st.help(range)
     st.help(st.title)
+
+    # data load
+    iris = pd.read_csv('data/iris.csv')
+
+    st.title("IRIS TABLE")
+    st.dataframe(iris, 500, 300)  # Height, Weight
+
+    st.title('table()')
+    st.table(iris)
+
+    st.title('write()')
+    st.write(iris)
+
 
 if __name__ == '__main__':
     main()
